@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+    <title>SkillDock</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="drag-strip"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="brand-layer layer-a"></span>
+          <span class="brand-layer layer-b"></span>
+          <span class="brand-node"></span>
+        </div>
+        <div class="brand-text">
+          <strong>SkillDock</strong>
+          <span>本地技能坞</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav-item" data-nav="overview">
+          <span class="nav-icon" data-icon="grid"></span>
+          <span class="nav-label">概览</span>
+        </button>
+        <button class="nav-item" data-nav="skills">
+          <span class="nav-icon" data-icon="layers"></span>
+          <span class="nav-label">Skills</span>
+          <span class="nav-count" data-count="skills">0</span>
+        </button>
+        <button class="nav-item" data-nav="mcp">
+          <span class="nav-icon" data-icon="plug"></span>
+          <span class="nav-label">MCP 服务</span>
+          <span class="nav-count" data-count="mcp">0</span>
+        </button>
+        <button class="nav-item" data-nav="settings">
+          <span class="nav-icon" data-icon="sliders"></span>
+          <span class="nav-label">设置</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="foot-note">配置写入前自动备份，随时可回滚。</div>
+        <button class="ghost-btn" data-open-data>
+          <span data-icon="folder"></span>
+          打开数据目录
+        </button>
+        <div class="version">SkillDock <span data-version>0.1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="title-block">
+          <span class="eyebrow" data-eyebrow>工作区</span>
+          <h1 data-title>概览</h1>
+          <p class="subtitle" data-subtitle></p>
+        </div>
+        <div class="topbar-actions">
+          <label class="search">
+            <span class="search-icon" data-icon="search"></span>
+            <input id="search" type="search" placeholder="搜索 Skill、MCP 或路径" autocomplete="off" spellcheck="false" />
+            <kbd>⌘K</kbd>
+          </label>
+          <button class="btn primary" data-primary>
+            <span data-icon="plus"></span>
+            <span data-primary-label>新增 Skill</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="content" id="content"></section>
+    </main>
+
+    <div class="drawer" id="drawer" aria-hidden="true"></div>
+    <div class="modal-root" id="modal-root"></div>
+    <div class="toast-root" id="toast-root"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

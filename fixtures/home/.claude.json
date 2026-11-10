@@ -1,0 +1,34 @@
+{
+  "numStartups": 128,
+  "installMethod": "unknown",
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/yao/Documents"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your-github-token"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--headless"]
+    }
+  },
+  "projects": {
+    "/Users/yao/Projects/metro-im": {
+      "mcpServers": {
+        "supabase": {
+          "command": "npx",
+          "args": ["-y", "@supabase/mcp-server-supabase", "--project-ref", "abcd1234"],
+          "env": {
+            "SUPABASE_ACCESS_TOKEN": "your-supabase-token"
+          }
+        }
+      }
+    }
+  }
+}

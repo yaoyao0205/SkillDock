@@ -1,0 +1,56 @@
+{
+  "name": "skilldock",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SkillDock - 本地 Skill 与 MCP 管理器",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "demo": "SKILLDOCK_HOME=./fixtures/home electron .",
+    "test": "node scripts/test-core.js",
+    "shot": "SKILLDOCK_SHOT=1 electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.skilldock.app",
+    "productName": "SkillDock",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.png",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "darkModeSupport": true
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "target": [
+        "AppImage"
+      ],
+      "category": "Development"
+    }
+  },
+  "author": "yaoyao0205",
+  "license": "MIT"
+}

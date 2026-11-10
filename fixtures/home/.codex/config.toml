@@ -1,0 +1,13 @@
+model = "gpt-5.1"
+approval_policy = "on-request"
+
+[mcp_servers.notion]
+command = "npx"
+args = ["-y", "@notionhq/notion-mcp-server"]
+
+[mcp_servers.notion.env]
+NOTION_TOKEN = "your-notion-token"
+
+[mcp_servers.sentry]
+command = "npx"
+args = ["-y", "@sentry/mcp-server"]
